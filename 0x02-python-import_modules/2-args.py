@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-# Save this code in a file, for example, print_args.py
-
 if __name__ == "__main__":
     import sys
+    i = len(sys.argv) - 1
 
-    # Get the number of arguments
-    num_args = len(sys.argv) - 1
-
-    # Print the number of arguments
-    print(f"Number of argument(s): {num_args}", end='')
-
-    # Print arguments or '.' if no arguments
-    if num_args > 0:
-        print(" followed by:")
-        for i, arg in enumerate(sys.argv[1:], start=1):
-            print(f"{i}: {arg}")
+    if i == 0:
+        print("{} arguments.".format(i))
+    elif i == 1:
+        print("{} argument:".format(i))
     else:
-        print(".")
+        print("{} arguments:".format(i))
 
+    if i >= 1:
+        i = 0
+        for arg in sys.argv:
+            if i != 0:
+                print("{}: {}".format(i, arg))
+            i += 1
