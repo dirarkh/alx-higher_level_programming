@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 def max_integer(my_list=[]):
-    length = len(my_list)
+    """find the max element in list
 
-    if length == 0:
+    Args:
+        my_list: the list that contains the int
+
+    Returns:
+        return the max element
+    """
+    if len(my_list) == 0:
         return (None)
-
-    max_int = my_list[0]
-
-    for i in range(1, length):
-        if my_list[i] > max_int:
-            max_int = my_list[i]
-
-    return (max_int)
+    min_value = -10000000
+    for i in my_list:
+        if i > min_value:
+            min_value = i
+    return (min_value)

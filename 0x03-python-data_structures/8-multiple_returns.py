@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    len_sen = len(sentence)
+    """calculate length of stence and first character
 
-    if (len_sen == 0):
-        new_tuple = (len_sen, None)
+    Args:
+        sentence: the sentence
+
+    Returns:
+        return a (length, first-char)
+    """
+    if len(sentence) == 0:
+        result = 0, None
     else:
-        new_tuple = (len_sen, sentence[0])
-
-    return (new_tuple)
+        result = len(sentence), sentence[0]
+    return (result)

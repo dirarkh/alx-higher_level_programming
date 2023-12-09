@@ -1,10 +1,18 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    length = len(my_list)
+    """replace element in list without modifying the org list
 
-    new_list = my_list[:]
+    Args:
+        my_list: the list
+        idx: the index
+        element: the element to modify
 
-    if 0 <= idx < length:
-        new_list[idx] = element
-
+    Returns:
+        new_list or org_list if idx < 0 or
+        out of range
+    """
+    if (idx < 0 or idx > (len(my_list) - 1)):
+        return (my_list.copy())
+    new_list = my_list.copy()
+    new_list[idx] = element
     return (new_list)
