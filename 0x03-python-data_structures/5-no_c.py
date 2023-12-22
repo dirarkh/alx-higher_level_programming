@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    """return string without c and C
+    length = len(my_string)
 
-    Args:
-        my_string: the string
+    j = 0
 
-    Returns:
-        a new string without c and C
-    """
-    new_string = ''
-    for i in range(len(my_string)):
-        if my_string[i] not in 'cC':
-            new_string += my_string[i]
+    new_string = my_string[:]
+
+    for i in range(length):
+        if (my_string[i] == 'c' or my_string[i] == 'C'):
+            new_string = new_string[:(i - j)] + my_string[(i + 1):]
+            j += 1
+
     return (new_string)
